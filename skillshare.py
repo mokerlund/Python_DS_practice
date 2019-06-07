@@ -33,3 +33,6 @@ plt.hist(incomes, 50)
 incomes.mean()
 np.median(incomes)
 stats.mode(incomes)
+
+#Standard deviation
+incomes.std()
