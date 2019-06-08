@@ -3,12 +3,15 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.stats import norm
+from scipy.stats import expon
+from scipy.stats import binom
+from scipy.stats import poisson
 
 values= np.random.uniform(-10, 10, 100000)
 plt.plot(values)
 
 ##Normal/ Gaussian Distribution
-from scipy.stats import norm
 
 x = np.arange(-3, 3, 0.001)
 plt.plot(x, norm.pdf(x))
@@ -21,24 +24,27 @@ sigma = 2.0
 values = np.random.normal(mu, sigma, 10000)
 plt.hist(values, 50)
 
-from scipy.stats import expon
 
-##Exponential PDF / "Power Law"\
+##Exponential PDF / "Power Law"
 x = np.arange(0, 10, 0.001)
 plt.plot(x, expon.pdf(x))
 
 ##Binomial Probability Mass Function
 
-from scipy.stats import binom
 
-n,p = 10, 0.5
+n,p = 10, .5
 x = np.arange(0, 10, 0.001)
 plt.plot(x, binom.pmf(x, n, p))
 
 ##Poisson Probability Mass Function
+#Shows probability of getting a certain value
 
-from scipy.stats import poisson
+#Example: a website gets an avg of 500 views/day, what is the probablility that it would get 550?
 
 mu = 500
 x = np.arange(400, 600, 0.5)
 plt.plot(x, poisson.pmf(x, mu))
+
+#Quiz#  What is the equivalent of a probability function when using discrete instead of continuous data?
+#My Answer# A binomial probability mass function
+#Half correct# -- Probability mass function (of any kind)

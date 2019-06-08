@@ -20,7 +20,7 @@ incomes = np.append(incomes, [1000000000])
 np.median(incomes)
 incomes.mean()
 
-#Mode
+#ModeS
 ages = np.random.randint(18, high=90, size=500)
 ages
 
