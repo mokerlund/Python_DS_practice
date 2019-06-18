@@ -32,7 +32,7 @@ plt.figure(figsize=(8,6))
 plt.scatter(X[:,0], X[:,1], c=y.astype(np.float))
 
 C = 1.0
-svc = svm.SVC(kernel='linear', C=C).fit(X,y)
+svc = svm.SVC(kernel=, C=C).fit(X,y)
 
 def plot_predictions(clf):
     #Create a dense grid of points to sample
@@ -42,6 +42,7 @@ def plot_predictions(clf):
     npx = xx.ravel()
     npy = yy.ravel()
 
+    #Create a list of 2D(income, age) points
     sample_points = np.c_[npx, npy]
 
     #Generate predicted labels(cluster numbers) for each point
@@ -52,4 +53,21 @@ def plot_predictions(clf):
     plt.contourf(xx, yy, Z, cmap=plt.cm.Paired, alpha=0.8) #Draw the contour
     plt.scatter(X[:,0], X[:,1], c=y.astype(np.float)) #Draw the points
 
+plot_predictions(svc)
+
+#Or just use predict for a given point(person)
+print(svc.predict([[200000, 40]]))
+
+print(svc.predict([[50000, 65]]))
+
+#Activity: change the kernel attribute from linear to see different results
+
+svc = svm.SVC(kernel='poly', C=C, gamma='auto').fit(X,y)
+plot_predictions(svc)
+
+svc = svm.SVC(kernel='sigmoid', C=C).fit(X,y)
+plot_predictions(svc)
+
+
+svc = svm.SVC(kernel='rbf', C=C).fit(X,y)
 plot_predictions(svc)
