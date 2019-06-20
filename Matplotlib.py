@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
 from scipy.stats import norm
 import numpy as np
-
+import matplotlib.style
+import matplotlib as mpl
+mpl.style.use('classic')
 ##Matplotlib Tricks & Tips
 x = np.arange(-3, 3, 0.001)
 
@@ -53,4 +55,4 @@ plt.plot(df)
 plt.xlabel('time')
 plt.ylabel('my happiness')
 
-plt.savefig('~/memegraph.png', format='png')
+plt.savefig('C:/users/megan/Programming/AV-April/memegraph.jpg')
