@@ -13,7 +13,7 @@ plt.plot(values)
 
 ##Normal/ Gaussian Distribution
 
-x = np.arange(-3, 3, 0.001)
+x = np.arange(-3, 3, 0.0001)
 plt.plot(x, norm.pdf(x))
 
 #Generate some random numbers with a normal distribution. 
